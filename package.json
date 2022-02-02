@@ -1,0 +1,17 @@
+{
+  "name": "ar-server",
+  "version": "1.0.0",
+  "description": "A server template for future projects",
+  "author": "Adrian R",
+  "scripts": {
+    "flow": "flow",
+    "start": "node server/index.js"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.170.0",
+    "tape": "^5.5.0"
+  },
+  "dependencies": {
+    "dotenv": "^15.0.0"
+  }
+}
