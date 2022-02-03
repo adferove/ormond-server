@@ -1,9 +1,12 @@
 // @flow
 
+const getBody = require('./get_body.js');
+const routeLogin = require('./routes/login/route_login.js');
+
 module.exports = (
   req /*: http$IncomingMessage<net$Socket> */,
   res /*: http$ServerResponse */
-) => {
+) /*: void */ => {
   const headers = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'OPTIONS, POST, GET',
@@ -23,8 +26,10 @@ module.exports = (
   const [urlPath /*: string */, queryString /*: string */] = req.url.split('?');
 
   if (urlPath === '/') {
-    res.writeHead(200, headers);
-    res.end(JSON.stringify({ message: 'Hello There!' }));
+    routeLogin(req, getBody).then((output) => {
+      res.writeHead(200, headers);
+      res.end(JSON.stringify(output));
+    });
   } else {
     res.writeHead(404, headers);
     res.end(`No endpoint ${urlPath} found`);

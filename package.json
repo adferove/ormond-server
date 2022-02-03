@@ -5,9 +5,11 @@
   "author": "Adrian R",
   "scripts": {
     "flow": "flow",
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "test": "tape **/*.tape.js | faucet"
   },
   "devDependencies": {
+    "faucet": "^0.0.1",
     "flow-bin": "^0.170.0",
     "tape": "^5.5.0"
   },
