@@ -1,6 +1,6 @@
 // @flow
 
-const getBody = require('./get_body.js');
+const getBody = require('./utils/get_body.js');
 const routeLogin = require('./routes/login/route_login.js');
 
 module.exports = (
