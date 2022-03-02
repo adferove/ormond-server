@@ -11,7 +11,7 @@ try {
     if (err) {
       return console.log(err);
     }
-    console.log(`The server is listening on ${conf.PORT}`);
+    console.log(`The server is listening on ${conf.PORT}!!!`);
   });
 } catch (error) {
   console.log(error);
